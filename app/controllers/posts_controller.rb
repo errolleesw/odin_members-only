@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
-  before_action :authenticate_user!
-  before_action :require_login, only: [:new, :create]
+  # before_action :authenticate_user!
+  before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @posts = Post.all
@@ -46,13 +46,13 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :body, :user_id)
   end
 
   def require_login
     unless user_signed_in?
       flash[:error] = "You must be logged in to access this section"
-      redirect_to new_session_path
+      redirect_to new_user_session_path
     end
   end
 

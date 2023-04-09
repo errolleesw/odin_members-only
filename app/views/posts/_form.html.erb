@@ -20,6 +20,13 @@
   </div>
 
   <div>
+    <%= form.label :user_id %><br>
+    <%= form.text_field :user_id %><br>
+    <% post.errors.full_messages_for(:user_id).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+
+  <div>
     <%= form.submit %>
   </div>
   
