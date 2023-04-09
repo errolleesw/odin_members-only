@@ -6,13 +6,31 @@
   <p>No posts found.</p>
 <% else %>
 
-  <ul>
-    <% @posts.each do |post| %>
-      <li>
-        <%= link_to post.title, post %>
-      </li>
-    <% end %>
-  </ul>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Body</th>
+        <th>Author</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @posts.each do |post| %>
+        <tr>
+          <td><%= link_to post.title, post %></td>
+          <td><%= post.body %></td>
+          <td>
+            <% if user_signed_in? %>
+              <%= post.user_email %>
+            <% else %>
+              <p> Sign in to view author.</p>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  
 <% end %>
 
 
