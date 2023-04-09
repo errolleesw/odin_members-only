@@ -1,0 +1,28 @@
+<h1>Posts</h1>
+
+<% if @posts.nil? %>
+  <p>No posts found.</p>
+<% else %>
+
+  <ul>
+    <% @posts.each do |post| %>
+      <li>
+        <%= link_to post.title, post %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= link_to 'New post', new_post_path %>
+<%= link_to 'Edit User details', edit_user_registration_path%>
+
+<div>
+  <% if user_signed_in? %>
+    Logged in as <%= current_user.email %>.
+    <%= form_tag destroy_user_session_path, method: :delete do %>
+      <%= submit_tag "Log out" %>
+    <% end %>
+  <% else %>
+    <%= link_to "Log in", new_user_session_path %>
+  <% end %>
+</div>
