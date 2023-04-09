@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is part of the Authenticcations project in The Odin Project's Ruby on Raisl Cirriculum. Find it at: https://www.theodinproject.com/lessons/ruby-on-rails-members-only
 
-Things you may want to cover:
+## Lessons Learnt:
+- learnt to add logic on index to return message is table is empty.
+- 
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
